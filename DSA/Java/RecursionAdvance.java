@@ -16,33 +16,33 @@ public class RecursionAdvance {
 //    }
 
 
-//    public static int countPaths(int i,int j, int n, int m){
-//        if (i==n || j==m){
-//            return 0;
-//        }
-//        if(i == n-1 && j == m-1){
-//            return 1;
-//        }
-//        int downPaths = countPaths(i+1,j, n, m);
-//        int rightPaths = countPaths(i, j+1, n, m);
-//        return downPaths + rightPaths;
-//    }
-
-    public static int placeTiles(int n, int m){
-        if (n==m){
-            return 2;
+    public static int countPaths(int i,int j, int n, int m){
+        if (i==n || j==m){
+            return 0;
         }
-        if (n<m){
+        if(i == n-1 && j == m-1){
             return 1;
         }
-        //vertical
-        int vertPlacements = placeTiles(n-m, m);
-        
-        //horizontal
-        int horPlacements = placeTiles(n-1, m);
-
-        return vertPlacements + horPlacements;
+        int downPaths = countPaths(i+1,j, n, m);
+        int rightPaths = countPaths(i, j+1, n, m);
+        return downPaths + rightPaths;
     }
+
+//    public static int placeTiles(int n, int m){
+//        if (n==m){
+//            return 2;
+//        }
+//        if (n<m){
+//            return 1;
+//        }
+//        //vertical
+//        int vertPlacements = placeTiles(n-m, m);
+//
+//        //horizontal
+//        int horPlacements = placeTiles(n-1, m);
+//
+//        return vertPlacements + horPlacements;
+//    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -55,9 +55,10 @@ public class RecursionAdvance {
         int n = sc.nextInt();
         System.out.println("enter value of m: ");
         int m = sc.nextInt();
-//        int totalPaths= countPaths(0,0, n, m);
-//        System.out.println(totalPaths);
 
-        System.out.println(placeTiles(n, m));
+        int totalPaths= countPaths(0,0, n, m);
+        System.out.println(totalPaths);
+
+//        System.out.println(placeTiles(n, m));
     }
 }
