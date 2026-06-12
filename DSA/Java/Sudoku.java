@@ -106,7 +106,7 @@ public class Sudoku {
         Sudoku solver = new Sudoku();
         System.out.println("Original Sudoku:");
         printBoard(board);
- 
+
         solver.solveSudoku(board);
 
         System.out.println("\nSolved Sudoku:");
